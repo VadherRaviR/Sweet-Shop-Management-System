@@ -120,6 +120,13 @@ restockSweet(id, quantity) {
   sweet.quantity += quantity;
 }
 
+
+//low stock alert
+getLowStockItems(threshold = 5) {
+  return this.sweets.filter(s => s.quantity < threshold);
+}
+
+
 }
 
 module.exports=SweetShop;

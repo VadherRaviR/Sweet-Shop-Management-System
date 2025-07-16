@@ -212,5 +212,17 @@ describe('Restock Sweets', () => {
   });
 });
 
+//8.low stock
+describe('Low Stock Alerts', () => {
+  it('returns sweets with quantity less than threshold', () => {
+    shop.addSweet({ id: 1, name: 'Ladoo', category: 'Nut-Based', price: 20, quantity: 3 });
+    shop.addSweet({ id: 2, name: 'Barfi', category: 'Milk-Based', price: 25, quantity: 10 });
+
+    const lowStock = shop.getLowStockItems(5);
+    expect(lowStock).toHaveLength(1);
+    expect(lowStock[0].name).toBe('Ladoo');
+  });
+});
+
 
 });
