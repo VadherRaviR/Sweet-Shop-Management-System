@@ -1,8 +1,4 @@
 ﻿# Sweet-Shop-Management-System
-# Sweet-Shop-Management-System
-
-**Sweet Shop Management System**
-
 ~ A fully test-driven backend system for managing sweets inventory, written in JavaScript (Node.js) using Jest for TDD. Includes a simple frontend UI (HTML + JavaScript).
 
 #  ---- Features -----
