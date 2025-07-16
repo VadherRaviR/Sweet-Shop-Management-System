@@ -1,29 +1,28 @@
 ﻿# Sweet-Shop-Management-System
-~ A fully test-driven backend system for managing sweets inventory, written in JavaScript (Node.js) using Jest for TDD. Includes a simple frontend UI (HTML + JavaScript).
+ A fully test-driven backend system for managing sweets inventory, written in JavaScript (Node.js) using Jest for TDD. Includes a simple frontend UI (HTML + JavaScript).
 
-#  ---- Features -----
--> Add new sweets
--> View available sweets
--> Delete sweets
--> Search sweets by name/category/price
--> Sort sweets by name/category/price (asc/desc)
--> Purchase sweets (with stock validation)
--> Restock inventory
--> Low-stock alerts
--> Revenue tracking
--> Frontend UI for demo purposes
+#   Features 
+ Add new sweets
+ View available sweets
+ Delete sweets
+ Search sweets by name/category/price
+ Sort sweets by name/category/price (asc/desc)
+ Purchase sweets (with stock validation)
+ Restock inventory
+ Low-stock alerts
+ Revenue tracking
+ Frontend UI for demo purposes
 
 
 # Test-Driven Development (TDD)
 This project strictly follows the principles of Test-Driven Development:
--> Wrote tests before writing implementation
--> Used Jest for unit testing
--> Maintained high test coverage across all features
--> Followed red-green-refactor cycle
+Wrote tests before writing implementation
+Used Jest for unit testing
+Maintained high test coverage across all features
+Followed red-green-refactor cycle
 
 # Tech Stack:
 Layer	 | Tools Used
---------------------------
 Language - JavaScript (ES6)
 Testing	 - Jest
 Frontend - HTML + JS 
