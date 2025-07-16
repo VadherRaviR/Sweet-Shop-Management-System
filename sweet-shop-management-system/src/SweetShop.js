@@ -86,6 +86,26 @@ sortBy(field, order = 'asc') {
 }
 
 
+// purses
+purchaseSweet(id, quantity) {
+  if (quantity <= 0) {
+    throw new Error("Quantity must be a positive number.");
+  }
+
+  const sweet = this.sweets.find(s => s.id === id);
+  if (!sweet) {
+    throw new Error(`Sweet with ID ${id} not found.`);
+  }
+
+  if (sweet.quantity < quantity) {
+    throw new Error(`Insufficient stock for sweet ID ${id}.`);
+  }
+
+  sweet.quantity -= quantity;
+  this.totalRevenue += sweet.price * quantity;
+
+}
+
 }
 
 module.exports=SweetShop;

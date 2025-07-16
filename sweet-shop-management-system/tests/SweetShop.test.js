@@ -161,6 +161,34 @@ describe('Search and Sort', () => {
   });
 });
 
+//6.pursech
+describe('Purchase Sweets', () => {
+  beforeEach(() => {
+    shop = new SweetShop();
+    shop.addSweet({ id: 101, name: 'Gulab Jamun', category: 'Milk-Based', price: 10, quantity: 50 });
+  });
+
+  it('reduces quantity on successful purchase', () => {
+    shop.purchaseSweet(101, 10);
+    const sweet = shop.viewSweets().find(s => s.id === 101);
+    expect(sweet.quantity).toBe(40);
+  });
+
+  it('throws error if sweet does not exist', () => {
+    expect(() => shop.purchaseSweet(999, 5)).toThrow("Sweet with ID 999 not found.");
+  });
+
+  it('throws error if not enough quantity', () => {
+    expect(() => shop.purchaseSweet(101, 100)).toThrow("Insufficient stock for sweet ID 101.");
+  });
+
+  it('throws error if purchase quantity is zero or negative', () => {
+    expect(() => shop.purchaseSweet(101, 0)).toThrow("Quantity must be a positive number.");
+    expect(() => shop.purchaseSweet(101, -2)).toThrow("Quantity must be a positive number.");
+  });
+});
+
+
 
 
 });
