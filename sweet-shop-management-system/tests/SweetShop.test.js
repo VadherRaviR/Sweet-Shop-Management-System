@@ -62,4 +62,28 @@ describe("Sweet Shop Management System", () => {
     });
 
   });
+
+
+  // 3. View Sweets
+  describe('View Sweets', () => {
+    it('returns a list of all added sweets', () => {
+      shop.addSweet({
+        id: 1001,
+        name: "Kaju Katli",
+        category: "Nut-Based",
+        price: 50,
+        quantity: 20
+      });
+      shop.addSweet({
+        id: 1002,
+        name: "Gulab Jamun",
+        category: "Milk-Based",
+        price: 10,
+        quantity: 50
+      });
+
+      const sweets = shop.viewSweets();
+      expect(sweets).toHaveLength(2); //if actual length of sweets is not eqaul to expected length then test fails
+    });
+  });
 });
