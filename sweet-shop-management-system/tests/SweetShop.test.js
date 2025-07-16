@@ -112,7 +112,36 @@ describe("Sweet Shop Management System", () => {
 });
 
 
+//5.search , sort
+describe('Search', () => {
+  beforeEach(() => {
+    shop = new SweetShop();
 
+    shop.addSweet({ id: 1, name: 'Kaju Katli', category: 'Nut-Based', price: 50, quantity: 10 });
+    shop.addSweet({ id: 2, name: 'Gulab Jamun', category: 'Milk-Based', price: 30, quantity: 20 });
+    shop.addSweet({ id: 3, name: 'Rasgulla', category: 'Milk-Based', price: 25, quantity: 30 });
+    shop.addSweet({ id: 4, name: 'Chocolate Barfi', category: 'Chocolate', price: 70, quantity: 5 });
+  });
+
+  // Search
+  it('searches by name (partial match)', () => {
+    const results = shop.search({ name: 'Jamun' });
+    expect(results).toHaveLength(1);
+    expect(results[0].name).toBe('Gulab Jamun');
+  });
+
+  it('searches by category', () => {
+    const results = shop.search({ category: 'Milk-Based' });
+    expect(results).toHaveLength(2);
+  });
+
+  it('searches by price range', () => {
+    const results = shop.search({ minPrice: 30, maxPrice: 60 });
+    expect(results.map(s => s.name)).toEqual(['Kaju Katli', 'Gulab Jamun']);
+  });
+
+ 
+});
 
 
 

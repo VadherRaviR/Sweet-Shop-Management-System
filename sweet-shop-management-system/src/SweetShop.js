@@ -38,6 +38,19 @@ addSweet(sweet) {
   this.sweets.splice(index, 1);
 }
 
+//search 
+search(criteria = {}) {
+  return this.sweets.filter(sweet => {
+    const nameMatch = criteria.name ? sweet.name.toLowerCase().includes(criteria.name.toLowerCase()) : true;
+    const categoryMatch = criteria.category ? sweet.category.toLowerCase() === criteria.category.toLowerCase() : true;
+    const priceMatch =
+      (criteria.minPrice !== undefined ? sweet.price >= criteria.minPrice : true) &&
+      (criteria.maxPrice !== undefined ? sweet.price <= criteria.maxPrice : true);
+    
+    return nameMatch && categoryMatch && priceMatch;
+  });
+}
+
 
 }
 
