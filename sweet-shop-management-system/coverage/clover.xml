@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1752680641568" clover="3.2.0">
+  <project timestamp="1752680641568" name="All files">
+    <metrics statements="51" coveredstatements="43" conditionals="45" coveredconditionals="36" methods="18" coveredmethods="16" elements="114" coveredelements="95" complexity="0" loc="51" ncloc="51" packages="1" files="1" classes="1"/>
+    <file name="SweetShop.js" path="C:\Users\RAVI R VADHER\Desktop\kata-tdd\sweet-shop-management-system\src\SweetShop.js">
+      <metrics statements="51" coveredstatements="43" conditionals="45" coveredconditionals="36" methods="18" coveredmethods="16"/>
+      <line num="3" count="34" type="stmt"/>
+      <line num="9" count="6" type="stmt"/>
+      <line num="15" count="40" type="stmt"/>
+      <line num="17" count="40" type="stmt"/>
+      <line num="18" count="198" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="24" count="39" type="cond" truecount="2" falsecount="0"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="28" count="38" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
+      <line num="35" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="43" count="3" type="stmt"/>
+      <line num="44" count="12" type="cond" truecount="2" falsecount="0"/>
+      <line num="45" count="12" type="cond" truecount="2" falsecount="0"/>
+      <line num="47" count="12" type="cond" truecount="4" falsecount="0"/>
+      <line num="50" count="12" type="cond" truecount="3" falsecount="0"/>
+      <line num="57" count="0" type="stmt"/>
+      <line num="58" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="59" count="0" type="stmt"/>
+      <line num="62" count="0" type="stmt"/>
+      <line num="63" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="64" count="0" type="stmt"/>
+      <line num="66" count="0" type="stmt"/>
+      <line num="69" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="73" count="3" type="stmt"/>
+      <line num="74" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="75" count="1" type="stmt"/>
+      <line num="78" count="2" type="stmt"/>
+      <line num="79" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="80" count="5" type="stmt"/>
+      <line num="82" count="5" type="stmt"/>
+      <line num="85" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="91" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="92" count="2" type="stmt"/>
+      <line num="95" count="3" type="stmt"/>
+      <line num="96" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="97" count="1" type="stmt"/>
+      <line num="100" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="101" count="1" type="stmt"/>
+      <line num="104" count="1" type="stmt"/>
+      <line num="105" count="1" type="stmt"/>
+      <line num="111" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="112" count="2" type="stmt"/>
+      <line num="115" count="2" type="stmt"/>
+      <line num="116" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="117" count="1" type="stmt"/>
+      <line num="120" count="1" type="stmt"/>
+      <line num="126" count="2" type="stmt"/>
+      <line num="132" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

@@ -69,23 +69,6 @@ sortBy(field, order = 'asc') {
   return order === 'desc' ? sorted.reverse() : sorted;
 }
 
-sortBy(field, order = 'asc') {
-  const validFields = ['name', 'category', 'price'];
-  if (!validFields.includes(field)) {
-    throw new Error(`Invalid sort field: ${field}`);
-  }
-
-  const sorted = [...this.sweets].sort((a, b) => {
-    if (typeof a[field] === 'string') {
-      return a[field].localeCompare(b[field]);
-    }
-    return a[field] - b[field]; // for numbers like price
-  });
-
-  return order === 'desc' ? sorted.reverse() : sorted;
-}
-
-
 // purses
 purchaseSweet(id, quantity) {
   if (quantity <= 0) {
