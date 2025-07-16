@@ -189,6 +189,28 @@ describe('Purchase Sweets', () => {
 });
 
 
+//7.restoke
+describe('Restock Sweets', () => {
+  beforeEach(() => {
+    shop = new SweetShop();
+    shop.addSweet({ id: 202, name: 'Barfi', category: 'Milk-Based', price: 20, quantity: 10 });
+  });
+
+  it('increases the quantity on restock', () => {
+    shop.restockSweet(202, 15);
+    const sweet = shop.viewSweets().find(s => s.id === 202);
+    expect(sweet.quantity).toBe(25);
+  });
+
+  it('throws error if sweet does not exist', () => {
+    expect(() => shop.restockSweet(999, 5)).toThrow("Sweet with ID 999 not found.");
+  });
+
+  it('throws error if restock quantity is zero or negative', () => {
+    expect(() => shop.restockSweet(202, 0)).toThrow("Restock quantity must be a positive number.");
+    expect(() => shop.restockSweet(202, -10)).toThrow("Restock quantity must be a positive number.");
+  });
+});
 
 
 });
