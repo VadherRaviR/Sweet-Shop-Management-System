@@ -113,7 +113,7 @@ describe("Sweet Shop Management System", () => {
 
 
 //5.search , sort
-describe('Search', () => {
+describe('Search and Sort', () => {
   beforeEach(() => {
     shop = new SweetShop();
 
@@ -123,7 +123,7 @@ describe('Search', () => {
     shop.addSweet({ id: 4, name: 'Chocolate Barfi', category: 'Chocolate', price: 70, quantity: 5 });
   });
 
-  // Search
+  // --- Search ---
   it('searches by name (partial match)', () => {
     const results = shop.search({ name: 'Jamun' });
     expect(results).toHaveLength(1);
@@ -140,7 +140,25 @@ describe('Search', () => {
     expect(results.map(s => s.name)).toEqual(['Kaju Katli', 'Gulab Jamun']);
   });
 
- 
+  // --- Sort ---
+  it('sorts by name ascending', () => {
+    const sorted = shop.sortBy('name', 'asc');
+    expect(sorted.map(s => s.name)).toEqual([
+      'Chocolate Barfi',
+      'Gulab Jamun',
+      'Kaju Katli',
+      'Rasgulla'
+    ]);
+  });
+
+  it('sorts by price descending', () => {
+    const sorted = shop.sortBy('price', 'desc');
+    expect(sorted.map(s => s.price)).toEqual([70, 50, 30, 25]);
+  });
+
+  it('throws error on invalid sort field', () => {
+    expect(() => shop.sortBy('invalidField')).toThrow('Invalid sort field: invalidField');
+  });
 });
 
 

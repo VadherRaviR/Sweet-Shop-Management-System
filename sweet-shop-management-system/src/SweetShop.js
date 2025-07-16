@@ -38,7 +38,7 @@ addSweet(sweet) {
   this.sweets.splice(index, 1);
 }
 
-//search 
+//search
 search(criteria = {}) {
   return this.sweets.filter(sweet => {
     const nameMatch = criteria.name ? sweet.name.toLowerCase().includes(criteria.name.toLowerCase()) : true;
@@ -49,6 +49,40 @@ search(criteria = {}) {
     
     return nameMatch && categoryMatch && priceMatch;
   });
+}
+
+
+//sort
+sortBy(field, order = 'asc') {
+  const validFields = ['name', 'category', 'price'];
+  if (!validFields.includes(field)) {
+    throw new Error(`Invalid sort field: ${field}`);
+  }
+
+  const sorted = [...this.sweets].sort((a, b) => {
+    if (typeof a[field] === 'string') {
+      return a[field].localeCompare(b[field]);
+    }
+    return a[field] - b[field]; // for numbers like price
+  });
+
+  return order === 'desc' ? sorted.reverse() : sorted;
+}
+
+sortBy(field, order = 'asc') {
+  const validFields = ['name', 'category', 'price'];
+  if (!validFields.includes(field)) {
+    throw new Error(`Invalid sort field: ${field}`);
+  }
+
+  const sorted = [...this.sweets].sort((a, b) => {
+    if (typeof a[field] === 'string') {
+      return a[field].localeCompare(b[field]);
+    }
+    return a[field] - b[field]; // for numbers like price
+  });
+
+  return order === 'desc' ? sorted.reverse() : sorted;
 }
 
 
