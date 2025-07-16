@@ -86,4 +86,34 @@ describe("Sweet Shop Management System", () => {
       expect(sweets).toHaveLength(2); //if actual length of sweets is not eqaul to expected length then test fails
     });
   });
+
+ //4. delet Sweets
+  describe('Delete Sweets', () => {
+  it('removes a sweet by ID', () => {
+    const sweet = {
+      id: 1001,
+      name: "Rasgulla",
+      category: "Milk-Based",
+      price: 15,
+      quantity: 30
+    };
+    shop.addSweet(sweet);
+    
+    shop.deleteSweet(1001);
+    const sweets = shop.viewSweets();
+    expect(sweets.find(s => s.id === 1001)).toBeUndefined();
+    expect(sweets.length).toBe(0);
+  });
+
+  it('throws an error if sweet ID does not exist', () => {
+    expect(() => shop.deleteSweet(999)).toThrow("Sweet with ID 999 not found.");
+  });
+
+});
+
+
+
+
+
+
 });
